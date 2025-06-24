@@ -1,8 +1,8 @@
 services:
-  ad_data:
+  adtask3:
     build:
       context: .
-    container_name: ad_data-service
+    container_name: adtask3-service
     ports:
       - "8000:8000"
     develop:

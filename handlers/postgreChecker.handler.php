@@ -8,7 +8,7 @@ $dbname   = env('POSTGRES_DB', 'post_db');
 $user     = env('POSTGRES_USER', 'user');
 $password = env('POSTGRES_PASSWORD', 'password');
 
-$conn_string = "host=$host port=$port dbname=$dbname user=$username password=$password";
+$conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
 $dbconn = pg_connect($conn_string);
 
