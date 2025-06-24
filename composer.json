@@ -1,0 +1,18 @@
+{
+    "name": "PDAConcepcion/ad-task-3",
+    "description": "project",
+    "autoload": {
+        "psr-4": {
+            "PDAConcepcion\\AdTask3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PDAConcepcion",
+            "email": "202311772@fit.edu.ph"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
