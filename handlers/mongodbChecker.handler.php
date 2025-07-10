@@ -1,15 +1,17 @@
 <?php
-require_once __DIR__ . '/../utils/envSetter.util.php';
+// filepath: c:\xampp\htdocs\AD-Task-3\handlers\mongodbChecker.handler.php
 
-$host = env('MONGO_HOST', 'host.docker.internal');
-$port = env('MONGO_PORT', '27111');
-$db   = env('MONGO_DB', 'mong_db');
+require_once BASE_PATH . '/utils/dbEnvSetter.util.php';
+
+$host = $databases['mongoHost'];
+$port = $databases['mongoPort'];
+$db   = $databases['mongoDB'];
+
 try {
-    $mongo = new MongoDB\Driver\Manager("mongodb://host.docker.internal:27111");
+    $mongo = new MongoDB\Driver\Manager("mongodb://{$host}:{$port}");
     $command = new MongoDB\Driver\Command(["ping" => 1]);
     $mongo->executeCommand("admin", $command);
-
-    echo "✅ Connected to MongoDB successfully.  <br>";
-} catch (MongoDB\Driver\Exception\Exception $e) {
-    echo "❌ MongoDB connection failed: " . $e->getMessage() . "  <br>";
+    echo "✅ Connected to MongoDB successfully.<br>";
+} catch (Exception $e) {
+    echo "❌ MongoDB connection failed: " . $e->getMessage() . "<br>";
 }
