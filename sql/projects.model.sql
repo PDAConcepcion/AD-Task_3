@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS public.projects (
     start_date date,
     end_date date,
     status varchar(50) DEFAULT 'active' NOT NULL,
+    created_by uuid REFERENCES users(id) ON DELETE SET NULL,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL
 );

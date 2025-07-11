@@ -1,0 +1,29 @@
+/* Layout styles for main.layout.php */
+.breadcrumb-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.breadcrumb-nav {
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb-separator {
+    margin: 0 8px;
+}
+
+.breadcrumb-link {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.breadcrumb-current {
+    color: #333;
+    font-weight: 500;
+}
+
+.main-content {
+    min-height: calc(100vh - 200px);
+}

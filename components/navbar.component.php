@@ -1,7 +1,7 @@
 <?php
 // Ensure auth is available
 if (!isset($auth)) {
-    require_once __DIR__ . '/../bootstrap.php';
+    require_once BASE_PATH . '/bootstrap.php';
     require_once HANDLERS_PATH . '/postgreAuth.handler.php';
 }
 
@@ -11,18 +11,18 @@ $isLoggedIn = $auth->isLoggedIn();
 
 <nav class="navbar">
     <div class="container">
-        <a href="/" class="navbar-brand">
+        <a href="/pages/index.php" class="navbar-brand">
             🎯 TaskFlow
         </a>
         
         <div class="navbar-nav">
             <?php if ($isLoggedIn): ?>
-                <a href="/dashboard.php">📊 Dashboard</a>
-                <a href="/projects.php">📁 Projects</a>
-                <a href="/tasks.php">✅ Tasks</a>
+                <a href="/pages/dashboard.php">📊 Dashboard</a>
+                <a href="/pages/projects.php">📁 Projects</a>
+                <a href="/pages/tasks.php">✅ Tasks</a>
                 
                 <?php if ($auth->hasRole('admin')): ?>
-                    <a href="/users.php">👥 Users</a>
+                    <a href="/pages/users.php">👥 Users</a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
@@ -38,7 +38,7 @@ $isLoggedIn = $auth->isLoggedIn();
                 </span>
                 <a href="?action=logout" class="btn btn-danger">🚪 Logout</a>
             <?php else: ?>
-                <a href="/login.php" class="btn">🔐 Login</a>
+                <a href="/pages/login.php" class="btn">🔐 Login</a>
             <?php endif; ?>
         </div>
     </div>

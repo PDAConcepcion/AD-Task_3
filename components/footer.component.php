@@ -1,3 +1,4 @@
+</body>
 <footer>
     <div class="container">
         <p>&copy; 2025 TaskFlow - Task Management System. Built with PHP & PostgreSQL.</p>
